@@ -1,4 +1,5 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
-export default defineConfig({ plugins: [react()] });
+// Served from https://<user>.github.io/longhorn-web/
+export default defineConfig({ base: '/longhorn-web/', plugins: [react()] });

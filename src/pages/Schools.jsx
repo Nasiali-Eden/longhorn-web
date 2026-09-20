@@ -36,7 +36,7 @@ export default function Schools() {
             </div>
             <div className="col">
               <ImageWell
-                src="/photos/home-schools.png"
+                src={`${import.meta.env.BASE_URL}photos/home-schools.png`}
                 alt="A teacher working with learners in a classroom"
                 ratio="ar-4-3"
                 style={{ background: 'rgba(255,255,255,0.08)' }}

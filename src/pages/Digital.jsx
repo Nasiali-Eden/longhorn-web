@@ -43,7 +43,7 @@ export default function Digital() {
         </div>
 
         <ImageWell
-          src="/photos/digital-wide.png"
+          src={`${import.meta.env.BASE_URL}photos/digital-wide.png`}
           alt="Learners using digital devices"
           ratio="ar-21-9"
           style={{ marginTop: 52 }}

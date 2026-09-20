@@ -1,5 +1,5 @@
 // Placeholder newsroom. Replace with the CMS feed.
-const img = (id) => '/photos/news-' + id + '.png';
+const img = (id) => import.meta.env.BASE_URL + 'photos/news-' + id + '.png';
 
 export const news = [
   { id: 1, kind: 'Partnership', date: '12 August 2026', title: 'Placeholder partnership headline',   blurb: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor.' },

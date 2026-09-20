@@ -66,7 +66,7 @@ export default function About() {
         </div>
 
         <ImageWell
-          src="/photos/about-press.png"
+          src={`${import.meta.env.BASE_URL}photos/about-press.png`}
           alt="Longhorn Publishers offices and printing"
           ratio="ar-21-9"
           style={{ margin: '48px 0' }}

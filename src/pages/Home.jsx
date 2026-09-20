@@ -38,7 +38,7 @@ export default function Home() {
             </div>
           </div>
           <div className="hero__media">
-            <img src="/photos/hero-classroom.png" alt="Learners at work in an East African classroom" />
+            <img src={`${import.meta.env.BASE_URL}photos/hero-classroom.png`} alt="Learners at work in an East African classroom" />
           </div>
         </div>
       </section>
@@ -131,7 +131,7 @@ export default function Home() {
               </p>
               <footer>
                 <span className="pull-quote__face">
-                  <img src="/photos/quote-headteacher.png" alt="" />
+                  <img src={`${import.meta.env.BASE_URL}photos/quote-headteacher.png`} alt="" />
                 </span>
                 <span className="pull-quote__who">
                   Placeholder Name<br />Head Teacher, Placeholder School
@@ -159,7 +159,7 @@ export default function Home() {
             </div>
             <div className="col">
               <ImageWell
-                src="/photos/home-digital.png"
+                src={`${import.meta.env.BASE_URL}photos/home-digital.png`}
                 alt="Learners using tablets on the LOHO Learning platform"
                 style={{ background: 'rgba(255,255,255,0.08)' }}
               />
