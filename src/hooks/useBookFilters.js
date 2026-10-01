@@ -36,7 +36,7 @@ export function useBookFilters() {
     clear,
     filtered,
     active,
-    summary: active.length ? active.join(' · ') : 'all countries and levels',
+    summary: active.length ? active.join(' · ') : 'all books',
     query: params.toString()
   };
 }

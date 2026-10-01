@@ -29,5 +29,5 @@ export const milestones = [
 export const markets = [
   ['Kenya', 'Head office'], ['Uganda', 'Subsidiary, 1995'], ['Tanzania', 'Subsidiary, 2005'],
   ['Rwanda', 'Since 2009'], ['Cameroon', 'Since 2020'], ['DR Congo', 'Since 2022'],
-  ['Malawi', ''], ['Zambia', ''], ['Ethiopia', '']
+  ['Malawi', 'Partnership'], ['Zambia', 'Partnership'], ['Ethiopia', '']
 ];

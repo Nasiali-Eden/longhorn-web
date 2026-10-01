@@ -5,7 +5,7 @@ import Dialog from '../components/Dialog.jsx';
 import { books, bookBySlug } from '../data/books.js';
 import NotFound from './NotFound.jsx';
 
-const STORE_URL = 'https://longhornpublishers.com/store';
+const STORE_URL = 'https://mybidhaa.com/stores/longhorn-publishers-plc';
 
 export default function Book() {
   const { slug } = useParams();
@@ -18,9 +18,6 @@ export default function Book() {
 
   return (
     <main className="container book-detail" style={{ paddingTop: 36, paddingBottom: 88 }}>
-      <p className="breadcrumb breadcrumb--light">
-        <Link to="/">Longhorn</Link> / <Link to="/books">Books</Link> / <strong>{book.title}</strong>
-      </p>
 
       <div className="row">
         <div className="book-detail__cover">
@@ -32,14 +29,11 @@ export default function Book() {
         <div className="book-detail__body">
           <div className="book-detail__meta">{book.meta}</div>
           <h1>{book.title}</h1>
-          <p className="book-detail__author">{book.author} · Longhorn Publishers PLC</p>
+          <p className="book-detail__author">Longhorn Publishers PLC</p>
           <div className="rule-green rule-green--sm" />
           <p className="book-detail__desc">{book.description}</p>
 
-          <div className="book-detail__price-row">
-            <div className="book-detail__price">{book.price}</div>
-            {book.inStock && <span className="tag tag--green">In stock</span>}
-          </div>
+          <div className="tag-row">{book.badges.map((b) => <span className="tag tag--green" key={b}>{b}</span>)}</div>
 
           <div className="btn-row" style={{ marginTop: 20 }}>
             <button type="button" className="btn btn--primary btn--lg" onClick={() => setHandoff(true)}>
@@ -49,7 +43,7 @@ export default function Book() {
             <Link className="btn btn--ghost" to="/schools">School quotation</Link>
           </div>
           <p className="book-detail__note">
-            Buying opens the Longhorn online bookstore. We will tell you before you leave.
+            Buying opens the Longhorn online bookstore on My Bidhaa. We will tell you before you leave.
           </p>
 
           <hr className="hr" style={{ margin: '32px 0' }} />
@@ -59,12 +53,11 @@ export default function Book() {
               <h4 className="label-sm">Essential information</h4>
               <table className="table">
                 <tbody>
-                  <tr><td className="spec-label">Country</td><td>{book.country}</td></tr>
                   <tr><td className="spec-label">Curriculum</td><td>{book.curriculum}</td></tr>
                   <tr><td className="spec-label">Level</td><td>{book.grade}</td></tr>
                   <tr><td className="spec-label">Subject</td><td>{book.subject}</td></tr>
-                  <tr><td className="spec-label">Format</td><td>{book.format}</td></tr>
-                  <tr><td className="spec-label">ISBN</td><td className="tnum">{book.isbn}</td></tr>
+                  <tr><td className="spec-label">Type</td><td>{book.type}</td></tr>
+                  <tr><td className="spec-label">Language</td><td>{book.language}</td></tr>
                 </tbody>
               </table>
             </div>
@@ -101,7 +94,7 @@ export default function Book() {
               <button type="button" className="btn btn--secondary" onClick={() => setHandoff(false)}>
                 Stay here
               </button>
-              <a className="btn btn--primary" href={STORE_URL} rel="noopener">Continue to store</a>
+              <a className="btn btn--primary" href={STORE_URL} target="_blank" rel="noreferrer">Continue to store</a>
             </>
           }
         >

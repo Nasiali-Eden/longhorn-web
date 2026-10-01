@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import RuledGrid from '../components/RuledGrid.jsx';
 import ImageWell from '../components/ImageWell.jsx';
-import { FILTERS } from '../data/books.js';
+import { COUNTRIES } from '../data/books.js';
 
 const CELLS = [
   ['Resources', 'Schemes of work and answer keys', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do.', 'Download'],
@@ -20,7 +20,6 @@ export default function Schools() {
         <div className="container" style={{ paddingTop: 52, paddingBottom: 52 }}>
           <div className="row row--center">
             <div className="col" style={{ flexBasis: 400 }}>
-              <p className="breadcrumb"><Link to="/">Longhorn</Link> / <strong>Schools &amp; Teachers</strong></p>
               <h1 style={{ fontSize: 'clamp(44px, 5.8vw, 74px)', lineHeight: 0.99, letterSpacing: '-0.015em', margin: '0 0 16px' }}>
                 Support for the people who teach.
               </h1>
@@ -36,7 +35,7 @@ export default function Schools() {
             </div>
             <div className="col">
               <ImageWell
-                src={`${import.meta.env.BASE_URL}photos/home-schools.png`}
+                src={`${import.meta.env.BASE_URL}banners/teacher-classroom.jpg`}
                 alt="A teacher working with learners in a classroom"
                 ratio="ar-4-3"
                 style={{ background: 'rgba(255,255,255,0.08)' }}
@@ -98,8 +97,8 @@ export default function Schools() {
                     </div>
                     <div className="field">
                       <label htmlFor="q-country">Country</label>
-                      <select className="input" id="q-country" name="country" defaultValue={FILTERS.country.options[0]}>
-                        {FILTERS.country.options.map((c) => <option key={c} value={c}>{c}</option>)}
+                      <select className="input" id="q-country" name="country" defaultValue={COUNTRIES[0]}>
+                        {COUNTRIES.map((c) => <option key={c} value={c}>{c}</option>)}
                       </select>
                     </div>
                   </div>

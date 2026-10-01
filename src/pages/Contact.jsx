@@ -13,12 +13,12 @@ export default function Contact() {
 
   return (
     <main>
-      <PageHeader crumb="Contact" title="Talk to Longhorn" />
+      <PageHeader title="Talk to Longhorn" />
 
       <section className="container" style={{ paddingTop: 52, paddingBottom: 88 }}>
         <div className="row">
           <div className="col" style={{ flexBasis: 300 }}>
-            <h4 className="label-sm">Head office</h4>
+            <h2 className="block-title">Head office</h2>
             <address className="contact__address" style={{ fontStyle: 'normal' }}>
               Longhorn Publishers PLC<br />
               Funzi Road, Industrial Area<br />
@@ -30,6 +30,7 @@ export default function Contact() {
               Email: <a href="mailto:enquiries@longhornpublishers.com">enquiries@longhornpublishers.com</a>
             </p>
 
+            <h2 className="block-title">Regional offices</h2>
             <div className="office-list">
               <div>
                 <h4>Uganda</h4>
@@ -41,6 +42,7 @@ export default function Contact() {
               </div>
             </div>
 
+            <h2 className="block-title">Who to contact</h2>
             <div className="route-list">
               {ROUTES.map(([title, body]) => (
                 <div key={title}>

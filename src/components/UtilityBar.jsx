@@ -8,7 +8,7 @@ export default function UtilityBar() {
         <span className="utility-bar__sep" aria-hidden="true" />
         <span>9 markets across Africa</span>
         <span className="utility-bar__links">
-          <Link to="/about">Investors</Link>
+          <Link to="/investors">Investors</Link>
           <Link to="/contact">Authors</Link>
           <Link to="/digital-learning" className="utility-bar__signin">LOHO sign in</Link>
         </span>

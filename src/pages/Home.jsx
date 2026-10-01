@@ -5,6 +5,7 @@ import BookCard from '../components/BookCard.jsx';
 import BookFilters from '../components/BookFilters.jsx';
 import ImageWell from '../components/ImageWell.jsx';
 import { books } from '../data/books.js';
+import { SERVICES, LOHO_URL, LOGOS } from '../data/services.js';
 import { news } from '../data/news.js';
 import { useBookFilters } from '../hooks/useBookFilters.js';
 
@@ -48,7 +49,7 @@ export default function Home() {
         <div className="finder">
           <div className="finder__head">
             <h2>Quick book finder</h2>
-            <p>Country, curriculum, level, subject — without leaving the page.</p>
+            <p>Curriculum, level, subject, type and language — without leaving the page.</p>
           </div>
           <BookFilters
             values={values}
@@ -152,10 +153,13 @@ export default function Home() {
                 LOHO Learning and e-books, one family of services
               </h2>
               <p style={{ fontSize: 19, lineHeight: 1.5, color: 'var(--m-200)', margin: '0 0 24px', maxWidth: '44ch' }}>
-                Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-                doloremque laudantium, totam rem aperiam.
+                LoHo Learning offers CBC-aligned lessons, school administration, accessibility and
+                coding tools, alongside LoHo E-Books created by education professionals.
               </p>
-              <Link className="btn btn--primary btn--md" to="/digital-learning">Explore digital learning</Link>
+              <div className="btn-row">
+                <Link className="btn btn--primary btn--md" to="/digital-learning">Explore digital learning</Link>
+                <a className="btn btn--secondary btn--md" href={LOHO_URL} target="_blank" rel="noreferrer">Visit LoHo Learning ↗</a>
+              </div>
             </div>
             <div className="col">
               <ImageWell
@@ -168,10 +172,27 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 05 news — row list */}
+      {/* 05 products and services */}
+      <section className="container section">
+        <SectionHeader num="05" title="Our products and services" flush />
+        <div className="service-grid">
+          {SERVICES.map((sv) => (
+            <article className="service-card" key={sv.title}>
+              {sv.logo && <img className="service-card__logo" src={LOGOS[sv.logo]} alt="" />}
+              <h3>{sv.title}</h3>
+              <p>{sv.body}</p>
+              {sv.href
+                ? <a className="ruled__link" href={sv.href} target="_blank" rel="noreferrer">Learn more ↗<span className="visually-hidden"> about {sv.title} (opens in a new tab)</span></a>
+                : <Link className="ruled__link" to={sv.to}>Learn more →<span className="visually-hidden"> about {sv.title}</span></Link>}
+            </article>
+          ))}
+        </div>
+      </section>
+
+      {/* 06 news — row list */}
       <section className="container section section--last">
         <SectionHeader
-          num="05"
+          num="06"
           title="News and impact"
           action={<Link className="ruled__link" to="/news">All news →</Link>}
           flush

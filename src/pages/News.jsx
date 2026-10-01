@@ -4,7 +4,7 @@ import { news } from '../data/news.js';
 export default function News() {
   return (
     <main>
-      <PageHeader crumb="News & Insights" title="News & Insights" />
+      <PageHeader image="covers-grade-11" title="News & Insights" />
       <section className="container" style={{ paddingTop: 44, paddingBottom: 88 }}>
         <div className="news-grid">
           {news.map((n) => (

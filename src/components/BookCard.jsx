@@ -8,9 +8,7 @@ export default function BookCard({ book, showFormat }) {
       </figure>
       <div className="book-card__meta">{book.meta}</div>
       <div className="book-card__title">{book.title}</div>
-      <div className="book-card__price">
-        {book.price}{showFormat ? ' · ' + book.format : ''}
-      </div>
+      <div className="book-card__price">{showFormat ? book.type + ' · ' + book.language : book.type}</div>
     </Link>
   );
 }

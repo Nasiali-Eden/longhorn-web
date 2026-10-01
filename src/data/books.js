@@ -1,45 +1,51 @@
-// Placeholder catalogue. Replace with the real product feed / CMS.
-// Shape kept deliberately close to what the design needs.
+// Catalogue data. Replace with the product feed / CMS.
+// Only facts visible on the book covers are recorded here. Prices, ISBNs and authors are
+// not known yet, so they are left out and the UI does not render them.
 
-const cover = (id) => 'https://picsum.photos/seed/lh-book-' + id + '/600/800';
+const cover = (file) => import.meta.env.BASE_URL + 'covers/' + file + '.jpg';
+const KICD = 'Approved by the Kenya Institute of Curriculum Development (KICD)';
 
 const raw = [
-  { id: 1,  title: 'Lorem Ipsum Dolor',     country: 'Kenya',    curriculum: 'CBC',                  grade: 'Grade 4', subject: 'Mathematics',    price: 'KSh 640',   format: 'Print + e-book', isbn: '978-9966-00-000-1' },
-  { id: 2,  title: 'Consectetur Adipiscing', country: 'Kenya',    curriculum: 'CBC',                  grade: 'Grade 7', subject: 'Mathematics',    price: 'KSh 780',   format: 'Print',          isbn: '978-9966-00-000-2' },
-  { id: 3,  title: 'Sed Do Eiusmod',        country: 'Kenya',    curriculum: 'CBC',                  grade: 'Grade 7', subject: 'English',        price: 'KSh 720',   format: 'Print + e-book', isbn: '978-9966-00-000-3' },
-  { id: 4,  title: 'Tempor Incididunt',     country: 'Kenya',    curriculum: 'CBC',                  grade: 'Grade 5', subject: 'Kiswahili',      price: 'KSh 590',   format: 'Print',          isbn: '978-9966-00-000-4' },
-  { id: 5,  title: 'Labore et Dolore',      country: 'Kenya',    curriculum: '8-4-4',                grade: 'Form 2',  subject: 'Chemistry',      price: 'KSh 860',   format: 'Print',          isbn: '978-9966-00-000-5' },
-  { id: 6,  title: 'Magna Aliqua',          country: 'Kenya',    curriculum: 'CBC',                  grade: 'Grade 6', subject: 'Science',        price: 'KSh 700',   format: 'Print + e-book', isbn: '978-9966-00-000-6' },
-  { id: 7,  title: 'Ut Enim ad Minim',      country: 'Uganda',   curriculum: 'National curriculum',  grade: 'Grade 5', subject: 'English',        price: 'UGX 32,000', format: 'Print',          isbn: '978-9966-00-000-7' },
-  { id: 8,  title: 'Quis Nostrud',          country: 'Uganda',   curriculum: 'National curriculum',  grade: 'Grade 7', subject: 'Mathematics',    price: 'UGX 36,000', format: 'Print',          isbn: '978-9966-00-000-8' },
-  { id: 9,  title: 'Exercitation Ullamco',  country: 'Uganda',   curriculum: 'National curriculum',  grade: 'Grade 6', subject: 'Social Studies', price: 'UGX 30,000', format: 'Print + e-book', isbn: '978-9966-00-000-9' },
-  { id: 10, title: 'Laboris Nisi',          country: 'Tanzania', curriculum: 'National curriculum',  grade: 'Grade 4', subject: 'Kiswahili',      price: 'TZS 22,000', format: 'Print',          isbn: '978-9966-00-001-0' },
-  { id: 11, title: 'Aliquip ex Ea',         country: 'Tanzania', curriculum: 'National curriculum',  grade: 'Grade 6', subject: 'Mathematics',    price: 'TZS 25,500', format: 'Print',          isbn: '978-9966-00-001-1' },
-  { id: 12, title: 'Commodo Consequat',     country: 'Tanzania', curriculum: 'National curriculum',  grade: 'Grade 7', subject: 'Science',        price: 'TZS 27,000', format: 'Print + e-book', isbn: '978-9966-00-001-2' }
+  { file: 'integrated-science-learners-book-grade-9', title: "Longhorn Integrated Science Learner's Book", curriculum: 'Rationalised Curriculum', grade: 'Grade 9', subject: 'Integrated Science', type: 'Course book', language: 'English', badges: [KICD] },
+  { file: 'social-studies-learners-book-grade-9', title: "Longhorn Social Studies Learner's Book", curriculum: 'Rationalised Curriculum', grade: 'Grade 9', subject: 'Social Studies', type: 'Course book', language: 'English', badges: [KICD] },
+  { file: 'the-bicycle-race-grade-4', title: 'The Bicycle Race and Other Stories', curriculum: 'CBC', grade: 'Grade 4', subject: 'English', type: 'Reader', language: 'English', badges: ['Competency Based Curriculum'] },
+  { file: 'treasures-of-mombasa-grade-5', title: 'Treasures of Mombasa and Other Stories', curriculum: 'CBC', grade: 'Grade 5', subject: 'English', type: 'Reader', language: 'English', badges: ['Competency Based Curriculum'] },
+  { file: 'the-amazing-rewards-grade-6', title: 'The Amazing Rewards and Other Stories', curriculum: 'CBC', grade: 'Grade 6', subject: 'English', type: 'Reader', language: 'English', badges: ['Competency Based Curriculum'] },
+  { file: 'afya-ni-mali-gredi-4', title: 'Afya ni Mali na Hadithi Nyingine', curriculum: 'CBC', grade: 'Grade 4', subject: 'Kiswahili', type: 'Reader', language: 'Kiswahili', badges: ['Mtaala wa Kiumilisi'] },
+  { file: 'comprehensive-atlas-cbe-grades-4-6', title: 'Longhorn Comprehensive Atlas for CBE (Grades 4, 5 and 6)', curriculum: 'CBC', grade: 'Grades 4–6', subject: 'Geography', type: 'Reference', language: 'English', badges: [KICD] },
+  { file: 'comprehensive-atlas-cbe-grades-7-9', title: 'Longhorn Comprehensive Atlas for CBE (Grades 7, 8 and 9)', curriculum: 'CBC', grade: 'Grades 7–9', subject: 'Geography', type: 'Reference', language: 'English', badges: [KICD] },
+  { file: 'smartscore-cre-kjsea', title: 'SmartScore Christian Religious Education', curriculum: 'KJSEA', grade: 'Grades 7–9', subject: 'Christian Religious Education', type: 'Revision', language: 'English', badges: ['For KJSEA'] },
+  { file: 'smartscore-english-kjsea', title: 'SmartScore English', curriculum: 'KJSEA', grade: 'Grades 7–9', subject: 'English', type: 'Revision', language: 'English', badges: ['For KJSEA'] },
+  { file: 'smartscore-integrated-science-kjsea', title: 'SmartScore Integrated Science', curriculum: 'KJSEA', grade: 'Grades 7–9', subject: 'Integrated Science', type: 'Revision', language: 'English', badges: ['For KJSEA'] },
+  { file: 'solving-problems-kjsea-mathematics', title: 'Solving Problems KJSEA Mathematics', curriculum: 'KJSEA', grade: 'Grades 7–9', subject: 'Mathematics', type: 'Revision', language: 'English', badges: ['Competency Based Education'] },
+  { file: 'kamusi-ya-karne-ya-21', title: 'Kamusi ya Karne ya 21 (Toleo la 5)', curriculum: 'General reference', grade: 'All levels', subject: 'Kiswahili', type: 'Reference', language: 'Kiswahili', badges: ['Imeidhinishwa na EMAC, BAKITA na KICD'] }
 ];
 
 const slugify = (s) => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
 
-export const books = raw.map((b) => ({
+export const books = raw.map((b, i) => ({
   ...b,
-  slug: slugify(b.title),
-  author: 'Placeholder Author',
-  coverUrl: cover(b.id),
-  inStock: true,
+  id: i + 1,
+  slug: slugify(b.file),
+  coverUrl: cover(b.file),
   meta: b.curriculum + ' · ' + b.grade + ' · ' + b.subject,
-  description:
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ' +
-    'ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ' +
-    'ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+  description: b.title + ' — ' + b.type.toLowerCase() + ' for ' + b.grade.toLowerCase() + ' (' + b.curriculum + '), published by Longhorn Publishers.'
 }));
 
 export const bookBySlug = (slug) => books.find((b) => b.slug === slug);
 
+// Filter options are derived from the catalogue so they can never drift from the data.
+const optionsFor = (key) => [...new Set(books.map((b) => b[key]))].sort((a, b) => a.localeCompare(b, undefined, { numeric: true }));
+
 export const FILTERS = {
-  country: { label: 'Country', all: 'All countries', options: ['Kenya', 'Uganda', 'Tanzania'] },
-  curriculum: { label: 'Curriculum', all: 'All curricula', options: ['CBC', '8-4-4', 'National curriculum'] },
-  grade: { label: 'Grade or level', all: 'All levels', options: ['Grade 4', 'Grade 5', 'Grade 6', 'Grade 7', 'Form 2'] },
-  subject: { label: 'Subject', all: 'All subjects', options: ['Mathematics', 'English', 'Kiswahili', 'Science', 'Social Studies', 'Chemistry'] }
+  curriculum: { label: 'Curriculum', all: 'All curricula', options: optionsFor('curriculum') },
+  grade: { label: 'Grade or level', all: 'All levels', options: optionsFor('grade') },
+  subject: { label: 'Subject', all: 'All subjects', options: optionsFor('subject') },
+  type: { label: 'Product type', all: 'All product types', options: optionsFor('type') },
+  language: { label: 'Language', all: 'All languages', options: optionsFor('language') }
 };
 
 export const FILTER_KEYS = Object.keys(FILTERS);
+
+// Markets served (used by the school quotation form).
+export const COUNTRIES = ['Kenya', 'Uganda', 'Tanzania', 'Rwanda', 'Cameroon', 'DR Congo', 'Malawi', 'Zambia', 'Ethiopia'];
