@@ -10,7 +10,7 @@ export default function UtilityBar() {
         <span className="utility-bar__links">
           <Link to="/investors">Investors</Link>
           <Link to="/contact">Authors</Link>
-          <Link to="/digital-learning" className="utility-bar__signin">LOHO sign in</Link>
+          <a href="https://loholearning.co.ke/" target="_blank" rel="noreferrer" className="utility-bar__signin">LOHO sign in</a>
         </span>
       </div>
     </div>

@@ -6,13 +6,19 @@ import Home from './pages/Home.jsx';
 import Books from './pages/Books.jsx';
 import Book from './pages/Book.jsx';
 import Schools from './pages/Schools.jsx';
-import Digital from './pages/Digital.jsx';
+import { LOHO_URL } from './data/services.js';
 import AboutDetail from './pages/AboutDetail.jsx';
 import News from './pages/News.jsx';
 import Contact from './pages/Contact.jsx';
 import Tenders from './pages/Tenders.jsx';
 import Investors from './pages/Investors.jsx';
 import NotFound from './pages/NotFound.jsx';
+
+// The Digital Learning page now lives on the LoHo website; keep old links working.
+function LoHoRedirect() {
+  useEffect(() => { window.location.replace(LOHO_URL); }, []);
+  return <main className="container" style={{ padding: '96px var(--gutter)' }}><p>Taking you to <a href={LOHO_URL}>LoHo Learning</a>…</p></main>;
+}
 
 function ScrollToTop() {
   const { pathname, hash } = useLocation();
@@ -35,7 +41,7 @@ export default function App() {
         <Route path="/books" element={<Books />} />
         <Route path="/books/:slug" element={<Book />} />
         <Route path="/schools" element={<Schools />} />
-        <Route path="/digital-learning" element={<Digital />} />
+        <Route path="/digital-learning" element={<LoHoRedirect />} />
         <Route path="/about" element={<Navigate to="/about/company-overview" replace />} />
         <Route path="/about/:section" element={<AboutDetail />} />
         <Route path="/news" element={<News />} />

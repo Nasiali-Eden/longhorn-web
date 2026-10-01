@@ -6,7 +6,7 @@ import { BOOKSTORE_URL, LOHO_URL, LOGOS } from '../data/services.js';
 const CATALOGUE_LINKS = ['Longhorn English Readers', 'Longhorn Kiswahili Readers', 'CBC Grade 1', 'CBC Grade 2', 'CBC Grade 3', 'KCSE Encyclopaedias'];
 const ABOUT_LINKS = [['/about/company-overview', 'Company overview'], ['/about/our-journey', 'Our journey'], ['/about/african-footprint', 'Our African footprint'], ['/about/subsidiaries', 'Subsidiaries'], ['/about/impact-achievements', 'Impact & achievements'], ['/about/why-partner-with-us', 'Why partner with us']];
 const INVESTOR_LINKS = [['/investors/reports', 'Reports'], ['/investors/policies', 'Company Policies'], ['/investors/notices', 'Notices & Downloads']];
-const PLAIN_LINKS = { digital: ['/digital-learning', 'Digital Learning'], news: ['/news', 'News'], contact: ['/contact', 'Contact'] };
+const PLAIN_LINKS = { news: ['/news', 'News'], contact: ['/contact', 'Contact'] };
 
 function Chevron() {
   return <svg className="nav-trigger__chevron" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4.25 6 8l4-3.75" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" /></svg>;
@@ -37,10 +37,10 @@ function ProductsMega({ close }) {
     </section>
     <section className="products-mega__section" aria-labelledby="loho-title">
       <h2 id="loho-title">LOHO Learning</h2>
-      <NavLink className="products-mega__logo" to="/digital-learning" onClick={close}><img src={LOGOS.loho} alt="LOHO Learning" /></NavLink>
+      <a className="products-mega__logo" href={LOHO_URL} target="_blank" rel="noreferrer" onClick={close}><img src={LOGOS.loho} alt="LOHO Learning" /></a>
       <p>Interactive educational content and a comprehensive learning management system.</p>
       <a className="products-mega__arrow" href={LOHO_URL} target="_blank" rel="noreferrer" onClick={close}>Visit LOHO Learning <span aria-hidden="true">↗</span></a>
-      <div className="products-mega__subservice"><h2>LOHO E-Books</h2><p>Digital study materials created by education professionals.</p><NavLink className="products-mega__arrow" to="/digital-learning" onClick={close}>About LOHO and e-books <span aria-hidden="true">→</span></NavLink></div>
+      <div className="products-mega__subservice"><h2>LOHO E-Books</h2><p>Digital study materials created by education professionals.</p><a className="products-mega__arrow" href={LOHO_URL} target="_blank" rel="noreferrer" onClick={close}>Explore LOHO e-books <span aria-hidden="true">↗</span></a></div>
     </section>
     <section className="products-mega__section" aria-labelledby="services-title">
       <h2 id="services-title">Services</h2>
@@ -95,7 +95,7 @@ export default function SiteHeader() {
     </button>
     <nav id="site-nav" className={'site-nav' + (mobile ? ' site-nav--open' : '')} aria-label="Main">
       <NavMenu id="products" label="Products & Services" prefixes={['/books']} open={openMenu === 'products'} setOpen={setOpenMenu} mega><ProductsMega close={close} /></NavMenu>
-      {plain('digital')}
+      <a href={LOHO_URL} target="_blank" rel="noreferrer">Digital Learning <span aria-hidden="true">↗</span><span className="visually-hidden"> (opens in a new tab)</span></a>
       <NavMenu id="about" label="About" prefixes={['/about']} open={openMenu === 'about'} setOpen={setOpenMenu}>{list(ABOUT_LINKS)}</NavMenu>
       <NavMenu id="investors" label="Investor Relations" prefixes={['/investors']} open={openMenu === 'investors'} setOpen={setOpenMenu}>{list(INVESTOR_LINKS)}</NavMenu>
       {plain('news')}

@@ -10,6 +10,6 @@ export const SERVICES = [
   { title: 'Longhorn Books', body: 'Explore the diverse range of books published by Longhorn Publishers PLC, both education and non-education materials.', to: '/books' },
   { title: 'Publishing Services', body: 'We work with aspiring authors to help them navigate the self-publishing journey, from manuscript to publishing to distribution.', to: '/contact' },
   { title: 'Language Services', body: 'High-quality translation services for all types of documents: commercial, non-commercial, technical and non-technical.', to: '/contact' },
-  { title: 'LOHO E-Books', logo: 'loho', body: 'Digital study materials created by professionals: scientists, editors and teachers.', to: '/digital-learning' },
+  { title: 'LOHO E-Books', logo: 'loho', body: 'Digital study materials created by professionals: scientists, editors and teachers.', href: LOHO_URL },
   { title: 'LOHO Learning', logo: 'loho', body: 'Our eLearning platform with interactive educational content and comprehensive learning management systems.', href: LOHO_URL }
 ];

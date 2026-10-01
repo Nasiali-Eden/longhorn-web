@@ -35,7 +35,7 @@ export default function Home() {
             </p>
             <div className="btn-row" style={{ marginTop: 32 }}>
               <Link className="btn btn--primary btn--lg" to="/books">Find a book</Link>
-              <Link className="btn btn--secondary btn--lg" to="/digital-learning">Explore digital learning</Link>
+              <a className="btn btn--secondary btn--lg" href={LOHO_URL} target="_blank" rel="noreferrer">Explore digital learning ↗</a>
             </div>
           </div>
           <div className="hero__media">
@@ -157,8 +157,7 @@ export default function Home() {
                 coding tools, alongside LoHo E-Books created by education professionals.
               </p>
               <div className="btn-row">
-                <Link className="btn btn--primary btn--md" to="/digital-learning">Explore digital learning</Link>
-                <a className="btn btn--secondary btn--md" href={LOHO_URL} target="_blank" rel="noreferrer">Visit LoHo Learning ↗</a>
+                <a className="btn btn--primary btn--md" href={LOHO_URL} target="_blank" rel="noreferrer">Visit LoHo Learning ↗</a>
               </div>
             </div>
             <div className="col">

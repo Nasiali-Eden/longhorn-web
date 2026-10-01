@@ -5,7 +5,7 @@ import { BOOKSTORE_URL, LOHO_URL } from '../data/services.js';
 // [target, label, external?]
 const COLS = [
   ['Books', [['/books', 'Browse catalogue'], ['/books#price-lists', 'Price lists'], [BOOKSTORE_URL, 'Online Bookstore', true], ['/schools', 'Request a quotation']]],
-  ['Digital', [['/digital-learning', 'Digital Learning'], [LOHO_URL, 'LoHo Learning', true], ['/digital-learning', 'LoHo E-Books'], ['/contact', 'Support']]],
+  ['Digital', [[LOHO_URL, 'Digital Learning', true], [LOHO_URL, 'LoHo E-Books', true], ['/contact', 'Support']]],
   ['Company', [['/about/company-overview', 'About Longhorn'], ['/investors', 'Investor Relations'], ['/tenders', 'Tenders'], ['/news', 'News & events'], ['/contact', 'Contact us']]]
 ];
 

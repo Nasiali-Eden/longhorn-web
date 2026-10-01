@@ -67,7 +67,7 @@ export default function Book() {
                 <li><a href="#sample">Sample pages (PDF)</a></li>
                 <li><a href="#scheme">Scheme of work</a></li>
                 <li><a href="#answers">Answer key</a></li>
-                <li><Link to="/digital-learning">Matching digital resources</Link></li>
+                <li><a href="https://loholearning.co.ke/" target="_blank" rel="noreferrer">Matching digital resources ↗</a></li>
               </ul>
             </div>
           </div>
